@@ -22,6 +22,10 @@ module.exports = function(DataHelpers) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
     }
+    
+    let tweetText = req.body.text;
+    res.status(201).send("Errorrrrrrrr");
+    }
 
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const tweet = {
