@@ -5,16 +5,17 @@
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.js",
+    "start": "node server/server.js",
     "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.2",
     "chance": "^1.0.2",
+    "ejs": "^3.1.6",
     "express": "^4.13.4",
-    "md5": "^2.1.0"
+    "md5": "^2.1.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"
