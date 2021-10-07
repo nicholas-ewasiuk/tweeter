@@ -1,0 +1,26 @@
+
+article {
+  background-color: burlywood;
+  border-style: solid;
+}
+
+article:hover {
+  box-shadow: 10px 10px rgba(0,0,0,0.5);
+}
+
+.icon-drawer span:hover {
+  background-color: darkcyan;
+}
+
+article header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+article footer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+

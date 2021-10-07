@@ -3,13 +3,15 @@ nav {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
   height: 120px;
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
 }
 
-a {
+nav a {
   display: flex;
   flex-direction: column;
   align-items: center;
