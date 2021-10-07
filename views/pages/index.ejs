@@ -4,12 +4,15 @@
     <%- include('../partials/_head'); %>
   </head>
   <body>
+
     <nav>
       <%- include('../partials/_navbar'); %>
     </nav>
+
     <header>
       <%- include('../partials/_header'); %>
     </header>
+
     <main>
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
@@ -21,10 +24,13 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+        <p id="test"></p>
       </section>
     </main>
+
     <footer>
       <%- include('../partials/_footer'); %>
     </footer>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>

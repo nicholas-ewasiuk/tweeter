@@ -1,11 +1,16 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+"use strict";
 
 function countRabbits() {
   for (let i = 0; i <= 3; i++) {
     alert("Rabbit number " + i);
   }
 }
+
+function handler1() {
+  alert('Thanks!');
+};
+
+function handler2() {
+  alert('Thanks!!!!!!!!!!!!');
+}
+
