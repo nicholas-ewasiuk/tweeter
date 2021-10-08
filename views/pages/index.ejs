@@ -9,13 +9,13 @@
       <%- include('../partials/_navbar'); %>
     </nav>
 
+  <div class="content-container">
     <header class="profile">
       <%- include('../partials/_header'); %>
     </header>
 
     <main>
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <form class="tweet-form" method="POST" action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -26,27 +26,10 @@
         </form>
       </section>
 
-      <div class="tweet-container">
-        <article>
-          <header>
-            <h1>Excellent tweet example text</h1>
-            <h2>@Username</h2>
-          </header>
-          <section>
-            <p>The text in the tweet goes here.</p>
-          </section>
-          <footer>
-            <p>1231 days ago</p>
-              <div class="icon-drawer">
-               <span class="fas fa-angle-double-down"></span>
-                <span class="fas fa-angle-double-down"></span>
-                <span class="fas fa-angle-double-down"></span>
-              </div>
-          </footer>
-        </article>
-      </div>
+      <div class="tweet-container"></div>
       
     </main>
+  </div>
 
     <footer>
       <%- include('../partials/_footer'); %>

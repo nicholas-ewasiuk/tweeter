@@ -13,18 +13,29 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif ;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 0 0px 0px;
 }
 
 main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: #f4f1ec;
-  width: 90%;
+  width: 100%;
 }
 
 
-.container {
-  font-family: "Bungee", cursive;
+@media screen and (min-width: 1024px) {
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 40px 0px 40px;
+    padding-top: 120px;
+  }
 }

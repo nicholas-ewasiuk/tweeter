@@ -1,3 +1,7 @@
+.new-tweet {
+  margin: 100px 0 40px 0;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -8,3 +12,26 @@ form div {
   display: flex;
   justify-content: space-between;
 }
+
+textarea {
+  border: none;
+  resize: none;
+  background-color: inherit;
+  border-bottom: 3px solid #545149;
+  margin-bottom: 0.5em;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+button {
+  background-color: #4056A1;
+  color: white;
+  font-family: "Bungee", cursive;
+}
+
+@media screen and (max-width: 1024px) {
+  
+}
+

@@ -4,7 +4,7 @@ function renderTweets(tweetDB) {
   $('.tweet-container' ).empty();
 
   for (let tweet of tweetDB) {
-    $('.tweet-container').append(createTweetElement(tweet));
+    $('.tweet-container').prepend(createTweetElement(tweet));
   }
 }
 
@@ -18,15 +18,16 @@ function createTweetElement(data) {
   <header>
     <h1>${data.user.name}</h1>
     <h2>${data.user.handle}</h2>
-   </header>
-   <section>
-     <p></p>
-   <footer>
+  </header>
+  <section>
+    <p></p>
+  </section>
+  <footer>
     <p class="timeago">${timeCreated}</p>
-     <div class="icon-drawer">
-       <span class="fas fa-angle-double-down"></span>
-       <span class="fas fa-angle-double-down"></span>
-       <span class="fas fa-angle-double-down"></span>
+    <div class="icon-drawer">
+     <span class="fas fa-angle-double-down"></span>
+     <span class="fas fa-angle-double-down"></span>
+     <span class="fas fa-angle-double-down"></span>
     </div>
   </footer>
    `;
@@ -35,5 +36,7 @@ function createTweetElement(data) {
 
   return tweetArticle;
 }
+
+
 
 

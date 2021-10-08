@@ -1,6 +1,12 @@
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+}
 
 article {
-  background-color: burlywood;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
   border-style: solid;
 }
 
@@ -8,19 +14,39 @@ article:hover {
   box-shadow: 10px 10px rgba(0,0,0,0.5);
 }
 
-.icon-drawer span:hover {
-  background-color: darkcyan;
-}
-
 article header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
+  padding: 0 20px 0 20px;
+}
+
+article section {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  border-bottom: 3px solid #545149;
+  padding-left: 20px;
+  margin: 0 10px 0 10px;
 }
 
 article footer {
   display: flex;
-  justify-content: space-around;
   flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20px 0 40px;
 }
 
+.icon-drawer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.icon-drawer span {
+  margin: 0 5px 0 5px;
+}
+
+.icon-drawer span:hover {
+  color: darkcyan;
+}

@@ -29,6 +29,8 @@ $( document ).ready(function() {
       alert('goodbye');
     }
   }));
+
+  loadTweets();
 });
 
 function loadTweets() {
@@ -37,20 +39,10 @@ function loadTweets() {
   });
 }
 
-//const charCounter = document.getElementsByClassName("counter")[0];
 
-
-//document.getElementById('form').addEventListener('submit', logSubmit);
-
-/*
-function updateCharCount(event) {
-  if (event.target.id === "tweet-text" ) {
-    charCounter.textContent = 140 - event.target.value.length;
-  }
+module.exports = {
+  loadTweets
 }
-*/
-
-
 
 
 
