@@ -1,49 +1,39 @@
 "use strict";
 
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
+function renderTweets(tweetDB) {
+  $('.tweet-container' ).empty();
+
+  for (let tweet of tweetDB) {
+    $('.tweet-container').append(createTweetElement(tweet));
+  }
 }
 
-//Fire the createTweet function
-$( document ).ready(function() {
-
-  $('main').append(createTweetElement(tweetData));
-
-});
-
-/*
-let div = document.createElement('div');
-div.innerHTML = "<p>Helllo there!!!</p>";
-document.body.append(div);
-*/
 function createTweetElement(data) {
-  let tweetArticle = document.createElement('article');
 
+  let tweetArticle = document.createElement('article');
+  
+  let timeCreated = timeago.format(data.created_at, 'en_US');
+  
   tweetArticle.innerHTML = `
   <header>
     <h1>${data.user.name}</h1>
     <h2>${data.user.handle}</h2>
-  </header>
-  <section>
-    <p>${data.content.text}</p>
-  <footer>
-    <p>${data.created_at}</p>
-    <div class="icon-drawer">
-      <span class="fas fa-angle-double-down"></span>
-      <span class="fas fa-angle-double-down"></span>
-      <span class="fas fa-angle-double-down"></span>
+   </header>
+   <section>
+     <p></p>
+   <footer>
+    <p class="timeago">${timeCreated}</p>
+     <div class="icon-drawer">
+       <span class="fas fa-angle-double-down"></span>
+       <span class="fas fa-angle-double-down"></span>
+       <span class="fas fa-angle-double-down"></span>
     </div>
   </footer>
-  `
+   `;
+
+  tweetArticle.querySelector('p').textContent = data.content.text;
 
   return tweetArticle;
 }
+
 
