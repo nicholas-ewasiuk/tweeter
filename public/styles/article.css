@@ -17,8 +17,27 @@ article:hover {
 article header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-direction: row;
-  padding: 0 20px 0 20px;
+  padding: 20px 20px 0 20px;
+  font-size: small;
+}
+
+article header h2 {
+  font-weight: 200;
+  color: #7991a8;
+  margin-right: 40px;
+}
+
+div.avatar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+div.avatar h1 {
+  margin-left: 10px;
+  font-weight: 200;
 }
 
 article section {
@@ -26,9 +45,14 @@ article section {
   justify-content: flex-start;
   flex-direction: row;
   border-bottom: 3px solid #545149;
-  padding-left: 20px;
+  padding: 0 10px 0 10px;
   margin: 0 10px 0 10px;
 }
+
+article section p {
+  word-break: break-word;
+}
+
 
 article footer {
   display: flex;
@@ -44,7 +68,7 @@ article footer {
 }
 
 .icon-drawer span {
-  margin: 0 5px 0 5px;
+  margin: 5px 2px 0 5px;
 }
 
 .icon-drawer span:hover {
