@@ -1,12 +1,38 @@
 "use strict";
 
-function renderTweets(tweetDB) {
-  $('.tweet-container' ).empty();
+$( document ).ready(function() {
+  $( '.tweet-form' ).on('submit', ( function( event ) {
+    
+    event.preventDefault();
 
-  for (let tweet of tweetDB) {
-    $('.tweet-container').prepend(createTweetElement(tweet));
-  }
-}
+    let counter = $( ".counter" )[0].textContent;
+
+    if (counter < 140 && counter >= 0) {
+      const formText = $(this).serialize(); 
+    
+      $.post( "/tweets/", formText )
+        .then(() => {
+          loadTweets();
+        });
+    }
+
+    if (counter === '140' ) {
+      $( '.error-msg' ).remove();
+      $( 'main' ).prepend('<p class="error-msg" hidden>Tweet cannot be empty!</p>');
+      $( '.error-msg' ).slideDown(2000);
+      setTimeout(() => { $( '.error-msg' ).slideUp(2000); }, 3000);
+    }
+
+    if (counter < 0) {
+      $( '.error-msg' ).remove();
+      $( 'main' ).prepend(`<p class="error-msg" hidden>Subscribe to Tweeter Pro ($14.99/mth) for more characters!</p>`);
+      $( '.error-msg' ).slideDown(2000);
+      setTimeout(() => { $( '.error-msg' ).slideUp(2000); }, 3000);
+    }
+  }));
+
+  loadTweets();
+});
 
 function createTweetElement(data) {
 
@@ -40,34 +66,13 @@ function createTweetElement(data) {
   return tweetArticle;
 }
 
+function renderTweets(tweetDB) {
+  $('.tweet-container' ).empty();
 
-$( document ).ready(function() {
-  $( '.tweet-form' ).on('submit', ( function( event ) {
-    
-    event.preventDefault();
-
-    let counter = $( ".counter" )[0].textContent;
-
-    if (counter < 140 && counter >= 0) {
-      const formText = $(this).serialize(); 
-    
-      $.post( "/tweets/", formText )
-        .then(() => {
-          loadTweets();
-        });
-    }
-
-    if (counter == 140) {
-      alert('hello');
-    }
-
-    if (counter < 0) {
-      alert('goodbye');
-    }
-  }));
-
-  loadTweets();
-});
+  for (let tweet of tweetDB) {
+    $('.tweet-container').prepend(createTweetElement(tweet));
+  }
+}
 
 function loadTweets() {
   $.get( "/tweets/", function( data ) {
