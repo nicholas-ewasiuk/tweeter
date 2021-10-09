@@ -1,12 +1,13 @@
 "use strict";
 
+//Submit tweet and check for errors
+
 $( document ).ready(function() {
   $( '.tweet-form' ).on('submit', ( function( event ) {
-    
     event.preventDefault();
-
     let counter = $( ".counter" )[0].textContent;
 
+    //Check if valid tweet content and send to tweet database
     if (counter < 140 && counter >= 0) {
       const formText = $(this).serialize(); 
     
@@ -31,9 +32,11 @@ $( document ).ready(function() {
     }
   }));
 
+  //Load tweets on page load.
   loadTweets();
 });
 
+//Create HTML content for tweet
 function createTweetElement(data) {
 
   let tweetArticle = document.createElement('article');
