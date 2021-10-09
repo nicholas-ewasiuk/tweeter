@@ -15,16 +15,16 @@ $( document ).ready(function() {
         .then(() => {
           loadTweets();
         });
-    }
 
-    if (counter === '140' ) {
+      document.getElementById("tweet-text").value = "";
+      $( ".counter" )[0].textContent = 140;
+    } else if (counter === '140' ) {
       $( '.error-msg' ).remove();
       $( 'main' ).prepend('<p class="error-msg" hidden>Tweet cannot be empty!</p>');
       $( '.error-msg' ).slideDown(2000);
       setTimeout(() => { $( '.error-msg' ).slideUp(2000); }, 3000);
-    }
 
-    if (counter < 0) {
+    } else if (counter < 0) {
       $( '.error-msg' ).remove();
       $( 'main' ).prepend(`<p class="error-msg" hidden>Subscribe to Tweeter Pro ($14.99/mth) for more characters!</p>`);
       $( '.error-msg' ).slideDown(2000);
